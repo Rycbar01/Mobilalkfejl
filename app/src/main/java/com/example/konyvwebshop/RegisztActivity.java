@@ -2,6 +2,7 @@ package com.example.konyvwebshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,11 +11,14 @@ import android.widget.EditText;
 
 public class RegisztActivity extends AppCompatActivity {
     private static final String LOG_TAG = RegisztActivity.class.getName();
+    private static final String PREF_KEY = MainActivity.class.getPackage().toString();
 
     EditText usernamedittext;
     EditText useremailedittext;
     EditText passwedittext;
     EditText passwagain;
+
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,14 @@ public class RegisztActivity extends AppCompatActivity {
         useremailedittext = findViewById(R.id.useremailedittext);
         passwedittext = findViewById(R.id.passwedittext);
         passwagain = findViewById(R.id.passwagain);
+
+        preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
+        String userN = preferences.getString("userN", "");
+        String passW = preferences.getString("passW", "");
+
+        usernamedittext.setText(userN);
+        passwedittext.setText(passW);
+        passwagain.setText(passW);
 
         Log.i(LOG_TAG, "onCreate");
 
