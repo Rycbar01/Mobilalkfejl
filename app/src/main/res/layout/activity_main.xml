@@ -17,7 +17,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.391"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <EditText
         android:id="@+id/edittextpassword"
@@ -30,7 +32,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittextuserN"
         app:layout_constraintVertical_bias="0.148"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <Button
         android:id="@+id/buttonLOG"
@@ -43,7 +47,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittextpassword"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.143"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
 
     <Button
         android:id="@+id/buttonREG"
@@ -56,6 +62,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLOG"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.143"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

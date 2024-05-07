@@ -7,7 +7,7 @@
     tools:context=".RegisztActivity">
 
     <TextView
-        android:id="@+id/regisztTextView"
+        android:id="@+id/regiszttextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@id/regisztTextView"/>
+        android:layout_below="@id/regiszttextview"/>
 
     <EditText
         android:id="@+id/useremailedittext"
