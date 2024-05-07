@@ -3,4 +3,9 @@
     <string name="nev">Név</string>
     <string name="jelszo">Jelszó</string>
     <string name="bejelentkezes">Bejelentkezés</string>
+    <string name="regiszt">Regisztráció</string>
+    <string name="felhasznev">Felhasználónév</string>
+    <string name="e_mail">E-mail</string>
+    <string name="jelszagain">Jelszó megerősítése</string>
+    <string name="megse">Mégse</string>
 </resources>

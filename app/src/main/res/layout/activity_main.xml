@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/edittextuserN"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/nev"
@@ -22,7 +22,7 @@
     <EditText
         android:id="@+id/edittextpassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginBottom="100dp"
         android:ems="10"
         android:hint="@string/jelszo"
@@ -44,4 +44,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittextpassword"
         app:layout_constraintVertical_bias="0.143" />
+
+    <Button
+        android:id="@+id/buttonREG"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/regiszt"
+        android:onClick="regiszt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLOG"
+        app:layout_constraintVertical_bias="0.143" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

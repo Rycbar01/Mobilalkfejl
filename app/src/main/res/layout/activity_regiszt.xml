@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisztActivity">
+
+    <TextView
+        android:id="@+id/regisztTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/regiszt"
+        android:textSize="24sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/usernameedittext"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:ems="10"
+        android:hint="@string/felhasznev"
+        android:inputType="textPersonName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/regisztTextView"/>
+
+    <EditText
+        android:id="@+id/useremailedittext"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/usernameedittext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:ems="10"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/passwedittext"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:ems="10"
+        android:hint="@string/jelszo"
+        android:inputType="textPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/useremailedittext"/>
+
+
+    <EditText
+        android:id="@+id/passwagain"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:ems="10"
+        android:hint="@string/jelszagain"
+        android:inputType="textPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/passwedittext"/>
+    
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/passwagain"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/regiszt"
+            android:onClick="regiszt"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="@string/megse"
+            android:onClick="megse"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
