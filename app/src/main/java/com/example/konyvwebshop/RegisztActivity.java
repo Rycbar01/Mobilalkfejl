@@ -49,6 +49,7 @@ public class RegisztActivity extends AppCompatActivity {
 
     }
 
+
     public void regiszt(View view) {
         String userN = usernamedittext.getText().toString();
         String email = useremailedittext.getText().toString();
