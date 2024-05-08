@@ -8,4 +8,14 @@
     <string name="e_mail">E-mail</string>
     <string name="jelszagain">Jelszó megerősítése</string>
     <string name="megse">Mégse</string>
+    <string name="telefonsz">Telefonszám</string>
+    <string name="cim">Cím</string>
+    <string name="vasarlo">Vásárló</string>
+    <string name="elado">Eladó</string>
+    <string-array name="phonemode">
+        <item>Otthoni</item>
+        <item>Munkahelyi</item>
+        <item>Mobil</item>
+        <item>Egyéb</item>
+    </string-array>
 </resources>
