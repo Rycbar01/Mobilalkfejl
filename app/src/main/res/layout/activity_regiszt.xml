@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hatter2"
     tools:context=".RegisztActivity">
 
     <TextView
@@ -126,11 +128,11 @@
     <RadioButton
         android:id="@+id/vasarloradiobutton"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="48dp"
     android:text="@string/vasarlo"/>
     <RadioButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:text="@string/elado"/>
 </RadioGroup>
     
@@ -146,6 +148,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn"
             android:text="@string/regiszt"
             android:onClick="regiszt"
             />
@@ -154,6 +157,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn"
             android:layout_marginStart="50dp"
             android:text="@string/megse"
             android:onClick="megse"
