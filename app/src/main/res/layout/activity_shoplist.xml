@@ -6,4 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".ShoplistActivity">
 
+    <ImageView
+        android:id="@+id/szarny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/szarny" />
+
+    <ImageView
+        android:id="@+id/narancsf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/szarny"
+        app:srcCompat="@drawable/narancsf"/>
+
+    <ImageView
+        android:id="@+id/evelyn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/narancsf"
+        app:srcCompat="@drawable/evelyn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="30dp"
+        app:layout_constraintLeft_toRightOf="@+id/szarny"
+        app:layout_constraintTop_toTopOf="@+id/szarny"
+        android:text="@string/leiras"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="30dp"
+        app:layout_constraintLeft_toRightOf="@+id/narancsf"
+        app:layout_constraintTop_toTopOf="@+id/narancsf"
+        android:text="@string/leiras"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="30dp"
+        app:layout_constraintLeft_toRightOf="@+id/evelyn"
+        app:layout_constraintTop_toTopOf="@+id/evelyn"
+        android:text="@string/leiras"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

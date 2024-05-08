@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/hatter"
+    >
 
     <EditText
         android:id="@+id/edittextuserN"
@@ -40,6 +42,7 @@
         android:id="@+id/buttonLOG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn"
         android:text="@string/bejelentkezes"
         android:onClick="bejelentkezes"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +58,7 @@
         android:id="@+id/buttonREG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn"
         android:text="@string/regiszt"
         android:onClick="regiszt"
         app:layout_constraintBottom_toBottomOf="parent"

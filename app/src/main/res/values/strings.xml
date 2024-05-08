@@ -12,6 +12,7 @@
     <string name="cim">Cím</string>
     <string name="vasarlo">Vásárló</string>
     <string name="elado">Eladó</string>
+    <string name="leiras">Leírás:</string>
     <string-array name="phonemode">
         <item>Otthoni</item>
         <item>Munkahelyi</item>

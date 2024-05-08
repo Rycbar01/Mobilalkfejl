@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "350554027259",
+    "project_id": "konyvesbolt-3165f",
+    "storage_bucket": "konyvesbolt-3165f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350554027259:android:70fb3f268d7a89c6a7ec5e",
+        "android_client_info": {
+          "package_name": "com.example.konyvwebshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSldFDv6zyNOGdaqZaPs8msPB7ireQBZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
