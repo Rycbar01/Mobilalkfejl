@@ -15,6 +15,11 @@
     <string name="leiras">Leírás:</string>
     <string name="vendeg">Vendég mód</string>
     <string name="logwithGugu">Google fiókkal</string>
+    <string name="itemplaceholder">itemplaceholder</string>
+    <string name="item_placeholder">itemplaceholder</string>
+    <string name="kosar">Kosárba</string>
+    <string name="leiras1">Leírás</string>
+    <string name="term_k_inf">Termékinfó</string>
     <string-array name="phonemode">
         <item>Otthoni</item>
         <item>Munkahelyi</item>
