@@ -1,5 +1,6 @@
 package com.example.konyvwebshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getName();
@@ -19,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     EditText passWET;
 
     private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
+    //private GoogleSignInClient mGoogleSignInClient;
+
 
 
     @Override
@@ -30,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         passWET = findViewById(R.id.edittextpassword);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
+        mAuth = FirebaseAuth.getInstance();
 
         Log.i(LOG_TAG, "onCreate");
     }
@@ -39,7 +51,24 @@ public class MainActivity extends AppCompatActivity {
     String userN = userNET.getText().toString();
     String passW = passWET.getText().toString();
 
-    Log.i(LOG_TAG, "Bejelentkezett: " + userN + ", jelszó: " + passW);
+    //Log.i(LOG_TAG, "Bejelentkezett: " + userN + ", jelszó: " + passW);
+        mAuth.signInWithEmailAndPassword(userN, passW).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG, "Sikeres felhasználói bejelentkezés");
+                    startshop();
+                } else {
+                    Log.d(LOG_TAG, "Felhasználói bejelentkezés sikertelen");
+                    Toast.makeText(MainActivity.this, "Felhasználói bejelentkezés sikertelen: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void startshop(){
+        Intent intent = new Intent(this, ShoplistActivity.class);
+        startActivity(intent);
     }
 
     public void regiszt(View view) {
@@ -89,4 +118,22 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.i(LOG_TAG, "onRestart");
     }
+
+//    public void loginGuest(View view) {
+//        mAuth.signInAnonymously().addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if(task.isSuccessful()){
+//                    Log.d(LOG_TAG, "Sikeres anonim felhasználói bejelentkezés");
+//                    startshop();
+//                } else {
+//                    Log.d(LOG_TAG, "Anonim felhasználói bejelentkezés sikertelen");
+//                    Toast.makeText(MainActivity.this, "Anonim felhasználói bejelentkezés sikertelen: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+//    }
+
+//    public void loginwGugu(View view) {
+//    }
 }

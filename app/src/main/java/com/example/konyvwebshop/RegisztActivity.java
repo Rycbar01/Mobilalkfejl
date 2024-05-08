@@ -1,5 +1,6 @@
 package com.example.konyvwebshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisztActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String LOG_TAG = RegisztActivity.class.getName();
@@ -30,6 +37,7 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
     RadioGroup accounttypegroup;
 
     private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +74,8 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Log.i(LOG_TAG, "onCreate");
 
     }
@@ -93,8 +103,20 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
 
 
         Log.i(LOG_TAG, "Regisztrált: " + userN + ", e-mail: " + email);
+        //startshop();
 
-        startshop();
+        mAuth.createUserWithEmailAndPassword(email,passW).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG, "Felhasználó sikeres létrehozása");
+                    startshop();
+                } else {
+                    Log.d(LOG_TAG, "Felhasználó sikertelen létrehozása");
+                    Toast.makeText(RegisztActivity.this, "Felhasználó sikertelen létrehozása: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void megse(View view) {
@@ -103,7 +125,7 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
 
     private void startshop(/* registered user data */){
         Intent intent = new Intent(this, ShoplistActivity.class);
-        intent.putExtra("SECRET_KEY", SECRET_KEY);
+       // intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);
     }
 
