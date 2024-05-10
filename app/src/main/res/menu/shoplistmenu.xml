@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search_bar"
+        android:title="@string/kereses"
+        android:icon="@drawable/search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"
+        />
+    <item
+        android:id="@+id/addcart"
+        android:title="@string/kosarba"
+        android:icon="@drawable/shoppingcart"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/viewselector"
+        android:title="View"
+        android:icon="@drawable/viewgrid"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/settings"
+        android:title="@string/beallitasok"
+        app:showAsAction="never"
+        android:icon="@drawable/settings"
+        app:actionViewClass="android.widget.SearchView"
+        />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/kijelentkezes"
+        app:showAsAction="never"
+        app:actionViewClass="android.widget.SearchView"
+        android:orderInCategory="2"
+        />
+</menu>

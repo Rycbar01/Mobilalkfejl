@@ -20,6 +20,10 @@
     <string name="kosar">Kosárba</string>
     <string name="leiras1">Leírás</string>
     <string name="term_k_inf">Termékinfó</string>
+    <string name="kijelentkezes">Kijelentkezés</string>
+    <string name="beallitasok">Beállítások</string>
+    <string name="kosarba">Kosárba</string>
+    <string name="kereses">Keresés</string>
     <string-array name="phonemode">
         <item>Otthoni</item>
         <item>Munkahelyi</item>
@@ -48,7 +52,7 @@
     </string-array>
 
 
-    <string-array name="shoppingrates">
+    <array name="shoppingrates">
         <item>4.5</item>
         <item>5</item>
         <item>5</item>
@@ -56,9 +60,9 @@
         <item>4.2</item>
         <item>4.7</item>
         <item>4.8</item>
-    </string-array>
+    </array>
 
-    <string-array name="shoppingitemimage">
+    <array name="shoppingitemimage">
         <item>@drawable/narancsf</item>
         <item>@drawable/evelyn</item>
         <item>@drawable/addie</item>
@@ -66,9 +70,9 @@
         <item>@drawable/bajnok</item>
         <item>@drawable/szuletetttehetseg</item>
         <item>@drawable/szirm</item>
-    </string-array>
+    </array>
 
-    <string-array name="shoppingitemprice">
+     <string-array name="shoppingitemprice">
         <item>8490 Ft</item>
         <item>4499 Ft</item>
         <item>5999 Ft</item>

@@ -1,12 +1,16 @@
 package com.example.konyvwebshop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -50,11 +54,40 @@ public class ShoplistActivity extends AppCompatActivity {
     }
 
     private void intializeData() {
-        String[] itemlist;
-        String[] iteminfos;
-        String[] itemprice;
+        String[] itemlist=getResources().getStringArray(R.array.shoppingitemsname);
+        String[] iteminfos=getResources().getStringArray(R.array.shoppingitemleiras);
+        String[] itemprice=getResources().getStringArray(R.array.shoppingitemprice);
+        TypedArray itemsimageresource=getResources().obtainTypedArray(R.array.shoppingitemimage);
+        TypedArray itemsrate=getResources().obtainTypedArray(R.array.shoppingrates);
 
-        TypedArray itemsimageresource;
-        TypedArray itemsrate;
+        mitemlist.clear();
+
+        for(int i=0;i<itemlist.length;i++){
+            mitemlist.add(new Shoppingitem(itemlist[i], iteminfos[i], itemprice[i], itemsrate.getFloat(i, 0), itemsimageresource.getResourceId(i,0)));
+        }
+
+        itemsimageresource.recycle();
+        mAdapter.notifyDataSetChanged();
     }
-}
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.shoplistmenu, menu);
+        MenuItem menuItem = menu.findItem(R.id.search_bar);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            public boolean onQueryTextChange(String s) {
+                Log.d(LOG_TAG, s);
+                mAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
+        return true;
+    }
+
+
+    }
