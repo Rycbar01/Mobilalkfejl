@@ -26,4 +26,57 @@
         <item>Mobil</item>
         <item>Egyéb</item>
     </string-array>
+    
+    <string-array name="shoppingitemsname">
+        <item>A Narancsfa kolostor</item>
+        <item>Evelyn hét férje</item>
+        <item>Addie LaRue láthatatlan élete</item>
+        <item>Legenda</item>
+        <item>Bajnok</item>
+        <item>Született tehetség</item>
+        <item>Szirmokba zárt szavak</item>
+    </string-array>
+
+    <string-array name="shoppingitemleiras">
+        <item>Fantasy</item>
+        <item>Regény</item>
+        <item>Fantasy</item>
+        <item>Sci-fi</item>
+        <item>Sci-fi</item>
+        <item>Sci-fi</item>
+        <item>Dráma</item>
+    </string-array>
+
+
+    <string-array name="shoppingrates">
+        <item>4.5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>4.3</item>
+        <item>4.2</item>
+        <item>4.7</item>
+        <item>4.8</item>
+    </string-array>
+
+    <string-array name="shoppingitemimage">
+        <item>@drawable/narancsf</item>
+        <item>@drawable/evelyn</item>
+        <item>@drawable/addie</item>
+        <item>@drawable/legenda</item>
+        <item>@drawable/bajnok</item>
+        <item>@drawable/szuletetttehetseg</item>
+        <item>@drawable/szirm</item>
+    </string-array>
+
+    <string-array name="shoppingitemprice">
+        <item>8490 Ft</item>
+        <item>4499 Ft</item>
+        <item>5999 Ft</item>
+        <item>2999 Ft</item>
+        <item>2999 Ft</item>
+        <item>2999 Ft</item>
+        <item>5499 Ft</item>
+    </string-array>
+    
+    
 </resources>

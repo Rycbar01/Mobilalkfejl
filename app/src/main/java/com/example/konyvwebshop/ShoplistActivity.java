@@ -1,8 +1,10 @@
 package com.example.konyvwebshop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -18,6 +20,7 @@ public class ShoplistActivity extends AppCompatActivity {
     private RecyclerView mRecycleView;
     private ArrayList<Shoppingitem> mitemlist;
     private ShoppingitemAdapter mAdapter;
+    private int gridnumber = 1;
 
 
 
@@ -35,5 +38,23 @@ public class ShoplistActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "Nem hitelesített felhasználó");
             finish();
         }
+
+        mRecycleView = findViewById(R.id.recycleview);
+        mRecycleView.setLayoutManager(new GridLayoutManager(this, gridnumber));
+        mitemlist=new ArrayList<>();
+        mAdapter=new ShoppingitemAdapter(this, mitemlist);
+        mRecycleView.setAdapter(mAdapter);
+        intializeData();
+
+
+    }
+
+    private void intializeData() {
+        String[] itemlist;
+        String[] iteminfos;
+        String[] itemprice;
+
+        TypedArray itemsimageresource;
+        TypedArray itemsrate;
     }
 }
