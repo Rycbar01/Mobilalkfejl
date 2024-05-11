@@ -46,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
         Log.i(LOG_TAG, "onCreate");
     }
 
+
+
     public void bejelentkezes(View view) {
 
     String userN = userNET.getText().toString();
     String passW = passWET.getText().toString();
 
-    //Log.i(LOG_TAG, "Bejelentkezett: " + userN + ", jelszó: " + passW);
+   // Log.i(LOG_TAG, "Bejelentkezett: " + userN + ", jelszó: " + passW);
         mAuth.signInWithEmailAndPassword(userN, passW).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -119,21 +121,19 @@ public class MainActivity extends AppCompatActivity {
         Log.i(LOG_TAG, "onRestart");
     }
 
-//    public void loginGuest(View view) {
-//        mAuth.signInAnonymously().addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//            @Override
-//            public void onComplete(@NonNull Task<AuthResult> task) {
-//                if(task.isSuccessful()){
-//                    Log.d(LOG_TAG, "Sikeres anonim felhasználói bejelentkezés");
-//                    startshop();
-//                } else {
-//                    Log.d(LOG_TAG, "Anonim felhasználói bejelentkezés sikertelen");
-//                    Toast.makeText(MainActivity.this, "Anonim felhasználói bejelentkezés sikertelen: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-//    }
+    public void loginGuest(View view) {
+        mAuth.signInAnonymously().addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG, "Sikeres anonim felhasználói bejelentkezés");
+                    startshop();
+                } else {
+                    Log.d(LOG_TAG, "Anonim felhasználói bejelentkezés sikertelen");
+                    Toast.makeText(MainActivity.this, "Anonim felhasználói bejelentkezés sikertelen: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
 
-//    public void loginwGugu(View view) {
-//    }
 }

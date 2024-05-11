@@ -111,6 +111,8 @@ public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapte
                 @Override
                 public void onClick(View view) {
                     Log.d("Tevékenység", "Kosárhoz adás");
+                    ((ShoplistActivity)mcontext).updateAlertIcon();
+
                 }
             });
         }

@@ -70,21 +70,21 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"/>
 
-<!--<Button-->
-<!--    android:id="@+id/guestlogbtn"-->
-<!--    android:layout_width="0dp"-->
-<!--    android:layout_height="48dp"-->
-<!--    android:background="@drawable/btn"-->
-<!--    android:layout_marginLeft="100dp"-->
-<!--    android:layout_marginRight="100dp"-->
-<!--    android:layout_marginTop="25dp"-->
-<!--    android:onClick="loginGuest"-->
-<!--    android:text="@string/vendeg"-->
-<!--    app:layout_constraintEnd_toEndOf="parent"-->
-<!--    app:layout_constraintHorizontal_bias="1.0"-->
-<!--    app:layout_constraintStart_toStartOf="parent"-->
-<!--    app:layout_constraintTop_toBottomOf="@+id/buttonREG"-->
-<!--    tools:ignore="OnClick"/>-->
+<Button
+    android:id="@+id/guestlogbtn"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:background="@drawable/btn"
+    android:layout_marginLeft="100dp"
+    android:layout_marginRight="100dp"
+    android:layout_marginTop="25dp"
+    android:onClick="loginGuest"
+    android:text="@string/vendeg"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/buttonREG"
+    tools:ignore="OnClick"/>
 
 <!--    <Button-->
 <!--        android:id="@+id/googlesignbtn"-->
