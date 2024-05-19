@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Konyvwebshop</string>
+    <string name="app_name">Könyvwebshop</string>
     <string name="nev">Név</string>
     <string name="jelszo">Jelszó</string>
     <string name="bejelentkezes">Bejelentkezés</string>
@@ -24,13 +24,16 @@
     <string name="beallitasok">Beállítások</string>
     <string name="kosarba">Kosárba</string>
     <string name="kereses">Keresés</string>
+    <string name="rendeles">Rendelés</string>
+    <string name="t_rl_s">Törlés</string>
+    <string name="ar">ár</string>
     <string-array name="phonemode">
-        <item>Otthoni</item>
+<!--        <item>Otthoni</item>-->
         <item>Munkahelyi</item>
         <item>Mobil</item>
-        <item>Egyéb</item>
+<!--        <item>Egyéb</item>-->
     </string-array>
-    
+
     <string-array name="shoppingitemsname">
         <item>A Narancsfa kolostor</item>
         <item>Evelyn hét férje</item>
@@ -56,13 +59,13 @@
         <item>4.5</item>
         <item>5</item>
         <item>5</item>
-        <item>4.3</item>
-        <item>4.2</item>
-        <item>4.7</item>
-        <item>4.8</item>
+        <item>4.5</item>
+        <item>3</item>
+        <item>3.5</item>
+        <item>4.5</item>
     </array>
 
-    <array name="shoppingitemimage">
+    <string-array name="shoppingitemimage">
         <item>@drawable/narancsf</item>
         <item>@drawable/evelyn</item>
         <item>@drawable/addie</item>
@@ -70,9 +73,9 @@
         <item>@drawable/bajnok</item>
         <item>@drawable/szuletetttehetseg</item>
         <item>@drawable/szirm</item>
-    </array>
+    </string-array>
 
-     <string-array name="shoppingitemprice">
+    <string-array name="shoppingitemprice">
         <item>8490 Ft</item>
         <item>4499 Ft</item>
         <item>5999 Ft</item>
@@ -81,6 +84,6 @@
         <item>2999 Ft</item>
         <item>5499 Ft</item>
     </string-array>
-    
-    
+
+
 </resources>

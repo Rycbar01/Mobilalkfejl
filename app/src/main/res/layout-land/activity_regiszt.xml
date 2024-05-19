@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hatter2"
+    tools:context=".RegisztActivity">
+
+
+    <TextView
+        android:id="@+id/regiszttextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/regiszt"
+        android:textSize="24sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:id="@+id/namelayout"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_below="@id/regiszttextview"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/usernameedittext"
+            android:layout_width="301dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="@string/felhasznev"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/useremailedittext"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_below="@id/namelayout"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/passwedittext"
+            android:layout_width="253dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="@string/jelszo"
+            android:inputType="textPassword" />
+
+
+        <EditText
+            android:id="@+id/passwagain"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="@string/jelszagain"
+            android:inputType="textPassword" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/regiszt"
+            android:onClick="regiszt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phonelayout"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_below="@id/linearlayout"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/phoneedittext"
+            android:layout_width="253dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="@string/telefonsz"
+            android:inputType="phone" />
+
+        <Spinner
+            android:id="@+id/phonespinner"
+            android:layout_width="204dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/megse"
+            android:onClick="megse"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/phonelayout"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true">
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

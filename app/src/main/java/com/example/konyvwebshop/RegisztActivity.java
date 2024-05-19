@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,8 +24,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisztActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String LOG_TAG = RegisztActivity.class.getName();
+    private static final int SECRET_KEY = 98;
     private static final String PREF_KEY = RegisztActivity.class.getPackage().toString();
-    private static final int SECRET_KEY = 99;
+    private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
 
     EditText usernamedittext;
     EditText useremailedittext;
@@ -33,11 +35,8 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
     EditText passwagain;
     EditText phoneedittext;
     Spinner spinner;
-    EditText adressedittex;
-    RadioGroup accounttypegroup;
 
-    private SharedPreferences preferences;
-    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
 
         int secret_key = getIntent().getIntExtra("SECRET_KEY", 0);
 
-        if(secret_key!=99){
+        if(secret_key!=98){
             finish();
         }
 
@@ -57,15 +56,12 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
         passwagain = findViewById(R.id.passwagain);
         phoneedittext = findViewById(R.id.phoneedittext);
         spinner = findViewById(R.id.phonespinner);
-        adressedittex = findViewById(R.id.adressedittext);
-        accounttypegroup = findViewById(R.id.accounttypegroup);
-        accounttypegroup.check(R.id.vasarloradiobutton);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
-        String userN = preferences.getString("userN", "");
+        String userE = preferences.getString("userE", "");
         String passW = preferences.getString("passW", "");
 
-        usernamedittext.setText(userN);
+        useremailedittext.setText(userE);
         passwedittext.setText(passW);
         passwagain.setText(passW);
 
@@ -94,11 +90,6 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
 
         String phonenumber = phoneedittext.getText().toString();
         String phonetype = spinner.getSelectedItem().toString();
-        String address = adressedittex.getText().toString();
-
-        int checkedId = accounttypegroup.getCheckedRadioButtonId();
-        RadioButton radioButton = accounttypegroup.findViewById(checkedId);
-        String accounttypegroup = radioButton.getText().toString();
 
 
 
@@ -120,12 +111,14 @@ public class RegisztActivity extends AppCompatActivity implements AdapterView.On
     }
 
     public void megse(View view) {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.forbuttons);
+        view.startAnimation(animation);
         finish();
     }
 
     private void startshop(/* registered user data */){
-        Intent intent = new Intent(this, ShoplistActivity.class);
-       // intent.putExtra("SECRET_KEY", SECRET_KEY);
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("SECRET_KEY", SECRET_KEY);
         startActivity(intent);
     }
 

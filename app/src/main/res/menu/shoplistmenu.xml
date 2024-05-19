@@ -9,29 +9,12 @@
         app:actionViewClass="android.widget.SearchView"
         />
     <item
-        android:id="@+id/addcart"
-        android:title="@string/kosarba"
-        android:icon="@drawable/shoppingcart"
-        app:showAsAction="always"
-        />
-    <item
-        android:id="@+id/viewselector"
-        android:title="View"
-        android:icon="@drawable/viewgrid"
-        app:showAsAction="always"
-        />
-    <item
-        android:id="@+id/settings"
-        android:title="@string/beallitasok"
-        app:showAsAction="never"
-        android:icon="@drawable/settings"
-        app:actionViewClass="android.widget.SearchView"
-        />
-    <item
         android:id="@+id/logout"
         android:title="@string/kijelentkezes"
-        app:showAsAction="never"
-        app:actionViewClass="android.widget.SearchView"
-        android:orderInCategory="2"
+        app:showAsAction="always"
+        android:icon="@drawable/logout"
         />
+
+
+
 </menu>

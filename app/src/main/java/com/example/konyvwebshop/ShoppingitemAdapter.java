@@ -12,7 +12,6 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +22,7 @@ import java.util.ArrayList;
 
 public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapter.ViewHolder> implements Filterable{
 
+    private static final String TAG = ShoppingitemAdapter.class.getName(); //MainActivity-ről Listre változtattam
     private ArrayList<Shoppingitem> mshoppingitemsdata;
     private ArrayList<Shoppingitem> mshoppingitemsdataAll;
     private Context mcontext;
@@ -48,6 +48,7 @@ public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapte
         if(holder.getAdapterPosition()>lastposition){
             Animation animation= AnimationUtils.loadAnimation(mcontext, R.anim.sliderow);
             holder.itemView.startAnimation(animation);
+
             lastposition=holder.getAdapterPosition();
         }
     }
@@ -61,23 +62,23 @@ public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapte
 
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
-            ArrayList<Shoppingitem> filteredlist = new ArrayList<>();
+            ArrayList<Shoppingitem> filteredList = new ArrayList<>();
             FilterResults results = new FilterResults();
 
             if(charSequence == null || charSequence.length() == 0){
                 results.count = mshoppingitemsdataAll.size();
                 results.values = mshoppingitemsdataAll;
             } else {
-                String filterpattern = charSequence.toString().toLowerCase().trim();
+                String filterPattern = charSequence.toString().toLowerCase().trim();
 
                 for(Shoppingitem item : mshoppingitemsdataAll){
-                    if(item.getName().toLowerCase().contains(filterpattern)){
-                        filteredlist.add(item);
+                    if(item.getName().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
                     }
                 }
 
-                results.count = filteredlist.size();
-                results.values = filteredlist;
+                results.count = filteredList.size();
+                results.values = filteredList;
             }
 
             return results;
@@ -85,7 +86,7 @@ public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapte
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
-            mshoppingitemsdata = (ArrayList) results.values;
+            mshoppingitemsdata = (ArrayList) results.values; //vidiben filterResults.values volt
             notifyDataSetChanged();
         }
     };
@@ -95,37 +96,57 @@ public class ShoppingitemAdapter extends RecyclerView.Adapter<ShoppingitemAdapte
         private TextView mtitletext;
         private TextView minfotext;
         private TextView mpricetext;
+        private TextView mcounttext;
         private ImageView mitemimage;
         private RatingBar mratingbar;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             mtitletext=itemView.findViewById(R.id.itemtitle);
             minfotext=itemView.findViewById(R.id.subtitle);
             mpricetext=itemView.findViewById(R.id.price);
+            mcounttext=itemView.findViewById(R.id.count);
             mitemimage=itemView.findViewById(R.id.itemimage);
             mratingbar=itemView.findViewById(R.id.ratingbar);
-
             itemView.findViewById(R.id.addcart).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.d("Tevékenység", "Kosárhoz adás");
-                    ((ShoplistActivity)mcontext).updateAlertIcon();
-
+                   //((ShoplistActivity)mcontext).updateAlertIcon();
                 }
             });
         }
-
-
         public void bindTo(Shoppingitem currentitem) {
 
             mtitletext.setText(currentitem.getName());
             minfotext.setText(currentitem.getInfo());
             mpricetext.setText(currentitem.getPrice());
+            mcounttext.setText(String.valueOf(currentitem.getCount()));
             mratingbar.setRating(currentitem.getRatedinfo());
 
-            Glide.with(mcontext).load(currentitem.getimageresource()).into(mitemimage);
+
+
+            Glide.with(mcontext)
+                    .load(currentitem.getImageresource())
+                    .into(mitemimage);
+
+
+            itemView.findViewById(R.id.addcart).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "Rendelés gomb megnyomva");
+                    ((ListActivity)mcontext ).updateCount(currentitem);
+                }
+            });
+
+            itemView.findViewById(R.id.delete).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "Törlés gomb megnyomva");
+                    ((ListActivity)mcontext).delete(currentitem);
+                }
+            });
+
         }
     }
 }
